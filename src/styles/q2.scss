@@ -1,0 +1,36 @@
+#q2 {
+  canvas {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &.in {
+    .content {
+      animation: q2-enter 1s linear;
+    }
+  }
+  &.current {
+    .question{
+      height:233.5px;
+      >div {
+        position: absolute;
+        left:0;
+        width:74.5px;
+        height:233.5px;
+        background:url(../assets/img/3/question-No.png) no-repeat left top;
+        background-size:auto 233.5px;
+      }
+    }
+  }
+}
+
+@keyframes q2-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta content="email=no" name="format-detection" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- header begin -->
+    <header>
+      <img src="assets/img/common/close-btn.png" alt="close" class="close" id="close">
+      <div class="music" id="music-control">
+        <img src="assets/img/common/music/circle.png" alt="music-circle" class="music-circle">
+        <img src="assets/img/common/music/note.png" alt="music-mote" class="music-note">
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- pages begin -->
+    <div class="pages">
+      <!-- start page begin -->
+      <div class="page current" id="start">
+        <img src="assets/img/1/fog-up.png" alt="fog-up" class="fog-up">
+        <img src="assets/img/1/fog-down.png" alt="fog-down" class="fog-down">
+        <div class="wrapper">
+          <div class="text">
+            <h3 class="question">
+              <span>梅</span>
+              <span>赛</span>
+              <span>德</span>
+              <span>斯</span>
+              <span>-</span>
+              <span>奔</span>
+              <span>驰</span>
+              <span>家</span>
+              <span>族</span>
+              <!-- 梅赛德斯-奔驰家族 -->
+            </h3>
+            <h3 class="question">
+              <span>你</span>
+              <span>的</span>
+              <span>性</span>
+              <span>格</span>
+              <span>最</span>
+              <span>符</span>
+              <span>合</span>
+              <span>哪</span>
+              <span>一</span>
+              <span>款</span>
+              <span> </span>
+              <span>？</span>
+              <!-- 你的性格最符合哪一款 ？ -->
+            </h3>
+          </div>
+          <div class="start-block">
+            <a class="start-btn" id="start-btn">点击<span>■</span>开始</a>
+          </div>
+        </div>
+      </div>
+      <!-- start page end -->
+      <!-- question 1 begin -->
+      <div class="page" id="q1">
+        <!-- content begin -->
+        <div class="content">
+          <div class="question">
+            <div class="animated flip">
+            </div>
+            <h3 class="title animated slideInRight">选择一条你想驰骋的路线</h3>
+          </div>
+          <ul class="answer-list" data-question-no="1">
+            <li class="answer slideInLeft animated" data-answer-id="A" data-answer-score="1">
+              <a>秋名山道</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="B" data-answer-score="2">
+              <a>撒哈拉大沙漠</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="C" data-answer-score="3">
+              <a>华尔街</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="D" data-answer-score="4">
+              <a>苏格兰高地</a>
+            </li>
+          </ul>
+        </div>
+        <!-- content end -->
+        <canvas id="q1-cvs"></canvas>
+      </div>
+      <!-- question 1 end -->
+      <!-- question 2 begin -->
+      <div class="page" id="q2">
+        <!-- content begin -->
+        <div class="content">
+          <div class="question">
+              <div class="animated flip">
+                </div>
+            <h3 class="title animated slideInRight">作为驾驶员，你需要为即将开始的旅途挑选一位玩伴，你会选择？</h3>
+          </div>
+          <ul class="answer-list" data-question-no="2">
+            <li class="answer slideInLeft animated" data-answer-id="A" data-answer-score="1">
+              <a>多年儿时的玩伴</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="B" data-answer-score="2">
+              <a>经验丰富的探险家</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="C" data-answer-score="3">
+              <a>亲密无间的恋人</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="D" data-answer-score="4">
+              <a>浑身是戏的逗趣朋友</a>
+            </li>
+          </ul>
+        </div>
+        <!-- content end -->
+        <canvas id="q2-cvs"></canvas>
+        <canvas id="q2-cvs-end"></canvas>
+      </div>
+      <!-- question 2 end -->
+      <!-- question 3 begin -->
+      <div class="page" id="q3">
+        <img src="assets/img/4/bg-2.png" alt="">
+        <!-- content begin -->
+        <div class="content">
+          <div class="question">
+              <div class="animated flip">
+                </div>
+            <h3 class="title animated slideInRight">在驾驶途中，天上浓云密布，你会感觉？</h3>
+          </div>
+          <ul class="answer-list" data-question-no="3">
+            <li class="answer slideInLeft animated" data-answer-id="A" data-answer-score="1">
+              <a>欢呼雀跃，大风越吹我心越荡</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="B" data-answer-score="2">
+              <a>跃跃欲试，欲与天公试比高</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="C" data-answer-score="3">
+              <a>安之若素，不过是一场雨滴而已</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="D" data-answer-score="4">
+              <a>自嘲逗乐，看来下次出门应该看看
+                <br/>天气预报了</a>
+            </li>
+          </ul>
+        </div>
+        <!-- content end -->
+        <canvas id="q3-cvs"></canvas>
+      </div>
+      <!-- question 3 end -->
+      <!-- question 4 begin -->
+      <div class="page" id="q4">
+        <!-- content begin -->
+        <div class="content">
+          <div class="question">
+              <div class="animated flip">
+                </div>
+            <h3 class="title animated slideInRight">行驶累了，你打算停车稍事休息，你会怎样用餐？</h3>
+          </div>
+          <ul class="answer-list" data-question-no="4">
+            <li class="answer slideInLeft animated" data-answer-id="A" data-answer-score="1">
+              <a>推门进入当地最有特色的汽车餐厅</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="B" data-answer-score="2">
+              <a>坐在后备箱和伙伴啃着三明治欢声笑语</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="C" data-answer-score="3">
+              <a>直接前往星级酒店就餐</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="D" data-answer-score="4">
+              <a>选择一片柔软的草坪，享受席地
+                <br/>野餐的乐趣</a>
+            </li>
+          </ul>
+        </div>
+        <!-- content end -->
+        <!-- car begin -->
+        <div class="car">
+          <div class="bg"></div>
+          <div class="bg"></div>
+          <div class="car-animation">
+            <img src="assets/img/5/frontWheel.png" alt="wheel" class="wheel">
+          </div>
+        </div>
+        <!-- car end -->
+      </div>
+      <!-- question 4 end -->
+      <!-- question 5 begin -->
+      <div class="page" id="q5">
+        <!-- content begin -->
+        <div class="content">
+          <div class="question">
+              <div class="animated flip">
+                </div>
+            <h3 class="title animated slideInRight">用完餐，附近商店售卖的商品吸引了你的目光，你会买下？</h3>
+          </div>
+          <ul class="answer-list" data-question-no="5">
+            <li class="answer slideInLeft animated" data-answer-id="A" data-answer-score="1">
+              <a>充满本地特色的一项旅行帽</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="B" data-answer-score="2">
+              <a>栩栩如生打磨光滑的琥珀</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="C" data-answer-score="3">
+              <a>描绘当地风景的油画</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="D" data-answer-score="4">
+              <a>写满本地故事的纸牌</a>
+            </li>
+          </ul>
+        </div>
+        <!-- content end -->
+        <!-- store begin -->
+        <div class="store"></div>
+        <!-- store end -->
+      </div>
+      <!-- question 5 end -->
+      <!-- question 6 begin -->
+      <div class="page" id="q6">
+        <!-- content begin -->
+        <div class="content">
+          <div class="question">
+              <div class="animated flip">
+                </div>
+            <h3 class="title animated slideInRight">旅途抵达了终点，你准备给你的伙伴一个意外惊喜，它会是？</h3>
+          </div>
+          <ul class="answer-list" data-question-no="6">
+            <li class="answer slideInLeft animated" data-answer-id="A" data-answer-score="1">
+              <a>多年未见的老友聚会</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="B" data-answer-score="2">
+              <a>充满刺激的驾驶路线挑战信</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="C" data-answer-score="3">
+              <a>慈善晚宴邀请函</a>
+            </li>
+            <li class="answer slideInLeft animated" data-answer-id="D" data-answer-score="4">
+              <a>整晚的篝火大趴</a>
+            </li>
+          </ul>
+        </div>
+        <!-- content end -->
+        <canvas id="q6-cvs"></canvas>
+      </div>
+      <!-- question 6 end -->
+      <!-- result begin -->
+      <div class="page overflow-scroll" id="result">
+        <div class="frame">
+          <img src="assets/img/result/frame.png" alt="bg-frame" class="bg-frame">
+          <img src="" alt="recommend-car" class="recommend-car" id="recommend-car">
+          <div class="recommend-car-series">
+            <!-- <h4>最适合你的奔驰座驾</h4>
+            <p class="series" id="first-series">A/B/C/CLA/SLC</p> -->
+            <h4>最适合你的</h4>
+            <h4 class="series">梅赛德斯-奔驰座驾 <span id="first-series">CLA</span></h4>
+            <!-- <p class="series" id="second-series">AMG&nbsp;GT</p> -->
+          </div>
+        </div>
+        <div class="class-banner">
+          <div class="left-icon"></div>
+          <h3 class="text" id="text">运动</h3>
+          <div class="right-icon"></div>
+        </div>
+        <div class="radar">
+          <img src="" alt="radar-result" class="radar-result" id="radar">
+        </div>
+        <div class="info-block">
+          <p class="info" id="info">满腔热情的你，是时代的新生力量。字典中根本就没有“放弃”和“失败”的字眼。直白、进取、无畏让你面对困境永远能够迎难而上，速战速决！</p>
+        </div>
+        <p class="text-banner" id="text-banner">/ 已向您推荐精彩驾旅路线 /</p>
+        <!-- <div class="recommend" id="download-qrcode">
+          <img src="" alt="" class="share" id="share-pic">
+          <p class="text">长按二维码下载客户端</p>
+        </div> -->
+        <div class="shared-btns">
+          <a class="first-btn btn" id="link" href="https://me-test-cn.secure.mercedes-benz.com/wps/myportal/mmp/home/inspireme/inspiremecontent/myguide">查看您的专属自驾路线</a>
+          <a class="first-btn btn" id="back" href="https://me-test-cn.secure.mercedes-benz.com/wps/myportal/mmp/home/inspireme/inspiremecontent/myguide">返回</a>
+          <btn class="second-btn btn">
+            <!-- 分享 -->
+          </btn>
+        </div>
+      </div>
+      <!-- result end -->
+    </div>
+     <!-- pages end -->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+@keyframes animInLeft {
+  from {
+    transform: rotate3d(0, 0, 1, -20deg) translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes animOutRight {
+  from {}
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    transform: rotate3d(0, 0, 1, 20deg) translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes animInRight {
+  from {
+    transform: rotate3d(0, 0, 1, 20deg) translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes animOutLeft {
+  from {}
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    transform: rotate3d(0, 0, 1, -20deg) translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+
+.animOutLeft {
+  animation: animOutLeft 1.5s ease;
+}
+
+.animInRight {
+  animation: animInRight 1.5s ease;
+}

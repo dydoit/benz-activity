@@ -1,0 +1,219 @@
+#result {
+  width: 105%;
+  &.in {
+    animation: result-enter .5s linear;
+    .frame {
+      img.bg-frame {
+        animation: bg-frame-enter 1.5s ease-in-out;
+      }
+      img.recommend-car {
+        animation: drive 1.5s linear;
+      }
+    }
+    .recommend-car-series {
+      animation: recommend-car-series-enter 1.5s ease-in-out;
+    }
+    .class-banner {
+      h3.text {
+        animation: result-text-enter 1s ease-in-out;
+      }
+    }
+  } // frame begin
+  .frame {
+    position: relative;
+    margin-top: 55.5px;
+    margin-left: 46.5px;
+    height: 260px;
+    img {
+      position: absolute;
+    }
+    img.bg-frame {
+      width: 84px;
+      height: 260px;
+    }
+    img.recommend-car {
+      &.sport {
+        top: 123px;
+        left: 22.5px;
+        height: 108px;
+      }
+      &.adventure {
+        top: 116px;
+        left: 22px;
+        height: 129px;
+      }
+      &.elegance {
+        top: 123px;
+        left: 22.5px;
+        height: 108px;
+      }
+      &.publicity {
+        top: 113.5px;
+        left: 22.5px;
+        height: 117.5px;
+      }
+    }
+    .recommend-car-series {
+      position: absolute;
+      top: 35px;
+      left: 23px;
+      width: 100%;
+      h4 {
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: normal;
+        span {
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+    }
+  } // frame end
+  // class-banner begin
+  .class-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    max-width: 414px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    .left-icon,
+    .right-icon {
+      width: 12px;
+      height: 12.5px;
+      background-image: url('../assets/img/result/tri-lines.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    h3.text {
+      text-align: center;
+      margin: 0 60px;
+      font-size: 28px;
+      font-weight: normal;
+    }
+  } // class-banner end
+  // radar begin
+  .radar {
+    width: 100vw;
+    max-width: 414px;
+    height: 260px;
+    background-image: url('../assets/img/result/radar/bg.png');
+    background-repeat: no-repeat;
+    background-size: 260px auto;
+    background-position: center;
+    img.radar-result {
+      display: block;
+      margin:0 auto;
+      width: 260px;
+    }
+  } // radar end
+  // info-block begin
+  .info-block {
+    width:100vw;
+    max-width: 414px;
+    text-align: justify;
+    margin-bottom: 60px;
+    padding-top: 60.5px;
+    p.info {
+      padding: 0 34px;
+      line-height: 33px;
+    }
+  } // info-block end
+  p.text-banner {
+    width:100vw;
+    max-width: 414px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 56.5px;
+  } // recommend begin
+  .recommend {
+    text-align: center;
+    img.share {
+      width: 208.5px;
+      height: 208.5px;
+    }
+  } // recommend end
+}
+
+.overflow-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shared-btns {
+  width:100vw;
+  max-width: 414px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  .btn {
+    width: 188px;
+    height: 34px;
+    line-height: 34px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .first-btn {
+    background-color: #fff;
+    color: #000;
+    margin-top: 39.5px;
+    border: 1px solid #fff;
+  }
+  .second-btn {
+    margin-top: 26px;
+    margin-bottom: 32.5px;
+  }
+}
+
+@keyframes result-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//车子动画
+@keyframes drive {
+  from {
+    transform: translate3d(-10px, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes recommend-car-series-enter {
+  from {
+    transform: translate3d(10px, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bg-frame-enter {
+  from {
+    top: 10px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes result-text-enter {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

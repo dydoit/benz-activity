@@ -1,0 +1,55 @@
+#q1 {
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &.current {
+    .animated  {
+      animation-delay: .5s;
+    }
+    .question{
+      height:165.5px;
+      >div {
+        position: absolute;
+        left:0;
+        width:74.5px;
+        height:165.5px;
+        background:url(../assets/img/2/question-No.png) no-repeat left top;
+        background-size:auto 165.5px;
+      }
+    }
+  }
+  &.out {
+    .content {
+      height: 100%;
+      animation: q1-leave 1s linear;
+    }
+    #q1-cvs {
+      animation: q1-leave 1s linear;
+    }
+  }
+}
+
+@keyframes q1-enter {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes q1-leave {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100%, -150%);
+  }
+}

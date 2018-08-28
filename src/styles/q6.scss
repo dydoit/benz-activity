@@ -1,0 +1,48 @@
+#q6 {
+  background-image: url('../assets/img/7/bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  #q6-cvs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &.current {
+    .question {
+      height: 232px;
+      >div {
+        position: absolute;
+        left:0;
+        width:74.5px;
+        height:232px;
+        background: url(../assets/img/7/question-No.png) no-repeat left top;
+        background-size: auto 232px;
+      }
+    }
+  }
+  &.out {
+    .content {
+      animation: q6-leave .5s linear;
+    }
+  }
+}
+
+@keyframes q6-enter {
+  from {
+    transform: scale(0.5, 0.5);
+  }
+  to {
+    transform: scale(1, 1)
+  }
+}
+
+@keyframes q6-leave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

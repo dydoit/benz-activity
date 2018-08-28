@@ -1,0 +1,291 @@
+@font-face {
+  font-family: "HYa3gj";
+  src: url("../assets/fonts/mini-fonts.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "HYa3gj";
+  color: #fff;
+  background-color: #000;
+}
+
+.shade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+// container style begin
+.container {
+  position: relative;
+  max-width: 750px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden; // header style begin
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; // background-color: #000;
+    width: 100%;
+    height: 61px;
+    img.close {
+      float: right;
+      width: 19px;
+      height: 19px;
+      margin-top: 15px;
+      margin-right: 20px;
+      display: none;
+    }
+    .music {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      width: 22px;
+      height: 22.5px;
+      img.music-circle {
+        width: 100%;
+      }
+      img.music-note {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 11px;
+        margin-top: -3px;
+        margin-left: 5px;
+      }
+    }
+  } // header style end
+  // pages style begin
+  .pages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    perspective: 800; // page style begin
+    // current style begin
+    .current {
+      z-index: 1;
+      opacity: 1;
+    } // current style end
+  } // pages style end
+}
+
+//具体每页样式
+.page {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .content {
+    position: relative;
+    z-index: 1;
+    padding-left: 30px;
+    margin-top: 40px;
+    .question {
+      position: relative;
+      padding-left: 30px; // title style begin
+      h3 {
+        position: absolute;
+        bottom: -7px;
+        margin: 0;
+        padding: 0 15px 0 0;
+        font-size: 22px;
+        font-weight: normal;
+        line-height: 34px;
+      } // title style end
+    } // question style end
+    // answer-list style begin
+    ul {
+      -webkit-tap-highlight-color: transparent;
+      margin: 30px 0 0 0;
+      padding: 0;
+      li {
+        visibility: hidden;
+        list-style: none;
+        margin-bottom: 10px;
+        line-height: 30px;
+        a {
+          display: inline-block;
+          height: 100%;
+          padding-left: 28px;
+          background: url('../assets/img/common/topic-unselected.png') no-repeat 0 8px;
+          background-size: 12px 13.5px;
+          cursor: pointer;
+          font-size: 16px;
+          color: #fff;
+          text-decoration: none;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        &.selected {
+          a {
+            background-image: url('../assets/img/common/topic-selected.png');
+          }
+        }
+      }
+    } // answer-list style end
+  } // content style end
+} // page style end
+// container style end
+// 特殊效果
+.black-page {
+  display: none;
+}
+
+//适配类似iphone 5的窄屏
+@media screen and (max-width:320px) {
+  .page {
+    .content {
+      margin-top: 30px;
+      ul {
+        margin-top: 30px;
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-height:520px) {
+  .page {
+    .content {
+      margin-top: 25px;
+      ul {
+        margin-top: 25px;
+        li {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+@media (-webkit-min-device-pixel-ratio:1) and (min-width:750px) {
+  .container {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width:414px;
+    height:736px;
+  }
+}
+//适配iphone 6p
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2) {
+  .page {
+    .content {
+      margin-top: 80px;
+      ul {
+        margin-top: 40px;
+        li {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+
+/*文字动画*/
+
+.animated {
+  animation-fill-mode: both;
+  animation-timing-function: ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-200%, 0, 0);
+    visibility: hidden;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+}
+
+.current .slideInLeft {
+  animation-duration: .6s;
+  animation-name: slideInLeft;
+  animation-delay: .8s;
+  &:nth-child(2) {
+    animation-delay: 1.1s;
+  }
+  &:nth-child(3) {
+    animation-delay: 1.4s;
+  }
+  &:nth-child(4) {
+    animation-delay: 1.8s;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(300%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.current .slideInRight {
+  animation-duration: 1s;
+  animation-name: slideInRight;
+}
+
+// 隐藏滚动条
+::-webkit-scrollbar {
+  display: none;
+}
+.current .question .flip {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  animation-name: flip;
+  animation-delay: 1s;
+  opacity: 0;
+}
+@keyframes flip {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    opacity: 1;
+    transform: perspective(400px) translate3d(0, 0, 100px) rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    opacity: 1;
+    transform: perspective(400px) translate3d(0, 0, 100px) rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    opacity: 1;
+    transform: perspective(400px) scale3d(.95, .95, .95);
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(400px);
+    animation-timing-function: ease-in;
+  }
+}
+//
+

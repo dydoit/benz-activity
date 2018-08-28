@@ -1,0 +1,121 @@
+#q4 {
+  transform-origin: 50% 120%;
+  .car {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 122px;
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 120%;
+      background-image: url('../assets/img/5/bg-line.png');
+      background-repeat: no-repeat;
+      background-size: 200% 40%;
+      background-position-y: 80%;
+    }
+    .bg:nth-of-type(2) {
+      background-position-x: 150%;
+      left: 100%;
+    }
+    .car-animation {
+      position: relative;
+      opacity: 0;
+      width: 174.5px;
+      height: 122px;
+      background-image: url('../assets/img/5/car.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      img.wheel {
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 50px;
+        right: 29.5px;
+        bottom: 1px;
+      }
+    }
+  }
+  &.current { // &.in // page 完全移出视野之后在取消动画
+    .question{
+      height:199px;
+      >div {
+        position: absolute;
+        left:0;
+        width:74.5px;
+        height:199px;
+        background:url(../assets/img/5/question-No.png) no-repeat left top;
+        background-size:auto 199px;
+      }
+    }
+    .car {
+      .bg {
+        animation: bg-run 1.2s linear infinite;
+      }
+      .car-animation {
+        img.wheel {
+          animation: wheel-rotate .5s linear infinite;
+        }
+      }
+      .q4-car-animate {
+        opacity: 1;
+        animation: q4-car-enter 1s ease-out;
+      }
+      animation: q4-enter .7s linear;
+    }
+  }
+  &.out {
+    .content {
+      animation: q4-leave .7s linear;
+    }
+    .car {
+      animation: q4-leave .7s linear;
+    }
+  }
+}
+
+@keyframes q4-enter {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes q4-leave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes bg-run {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes wheel-rotate {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes q4-car-enter {
+  from {
+    left: -174.5px;
+  }
+  to {
+    left: 0;
+  }
+}

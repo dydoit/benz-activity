@@ -1,0 +1,75 @@
+#q5 {
+  .store {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    width: 197.5px;
+    height: 300px;
+    background: url('../assets/img/6/store.png') no-repeat right bottom;
+    background-size: auto 300px;
+    @media screen and (max-width:320px) {
+      & {
+        height:250px;
+        background-size: auto 250px;
+      }
+    }
+  }
+  &.current{
+    .question{
+      height:199px;
+      >div {
+        position: absolute;
+        left:0;
+        width:74.5px;
+        height:199px;
+        background:url(../assets/img/6/question-No.png) no-repeat left top;
+        background-size:auto 199px;
+      }
+    }
+  }
+  &.in {
+    .content {
+      animation: q5-enter .7s linear;
+    }
+    .store {
+      animation: q5-enter .7s linear;
+    }
+  }
+  &.out {
+    .content {
+      transition: transform .5s linear;
+      transform: translateX(-200%);
+    }
+    .store {
+      transition: transform .5s linear;
+      transform: translateX(100%);
+    }
+  }
+}
+
+@keyframes q5-enter {
+  from {
+    transform: scale(0.5, 0.5);
+  }
+  to {
+    transform: scale(1, 1)
+  }
+}
+//适配类似iphone 5的窄屏
+@media screen and (max-width:360px) {
+  #q5 {
+    &.current{
+      .question{
+        height:233.5px;
+        >div {
+          position: absolute;
+          left:0;
+          width:74.5px;
+          height:233.5px;
+          background:url(../assets/img/6/question-No2.png) no-repeat left top;
+          background-size:auto 233.5px;
+        }
+      }
+    }
+  }
+}
